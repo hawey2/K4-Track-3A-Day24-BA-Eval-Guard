@@ -15,9 +15,12 @@ QDRANT_PORT = 6333
 COLLECTION_NAME = "lab24_production"
 NAIVE_COLLECTION = "lab24_naive"
 
-# --- Embedding (same as Day 18) ---
-EMBEDDING_MODEL = "BAAI/bge-m3"
-EMBEDDING_DIM = 1024
+# --- Embedding / reranking (Day 18 modules) ---
+EMBEDDING_MODEL = "all-MiniLM-L6-v2"
+EMBEDDING_DIM = 384
+RERANKER_MODEL = "BAAI/bge-reranker-v2-m3"
+RERANKER_BACKEND = "auto"
+LLM_MODEL = os.getenv("LLM_MODEL", "gpt-4o-mini")
 
 # --- Chunking (same as Day 18) ---
 HIERARCHICAL_PARENT_SIZE = 2048
